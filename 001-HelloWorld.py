@@ -13,6 +13,9 @@ Created on Fri Jan 28 19:31:49 2022
 
 
 #Problem 01
+# =============================================================================
+# Count the vowels
+# =============================================================================
 
 # =============================================================================
 # for char in s:
@@ -24,6 +27,9 @@ Created on Fri Jan 28 19:31:49 2022
 
 
 #Problem 02
+# =============================================================================
+# how many times does 'bob' appear in a given string
+# =============================================================================
 # =============================================================================
 # Even if it worked in local, I had problems with:
 #     incomplete code pasted in the sandbox
@@ -52,61 +58,51 @@ s='abcabcdlefghijzz'
 #s = 'azcbobobegghakl'
 #s = 'abcbcd'
 
-import string
-
-def index(letter):
-    return string.ascii_lowercase.index( letter.lower())
-
-def areConsecutiveLetters( letter1, letter2 ):
-    dif = index(letter2) - index( letter1 )
-    #return dif == 1
-    return  dif >= 0
-
-def howManyConsecutiveLetters( sentence, pos ):
-    if pos >= len( sentence ): return 0
-    length = 1
-    if pos == len( sentence ) - 1 : return length
-    while( areConsecutiveLetters ( sentence[pos + length - 1], sentence[pos + length] )):
-        length += 1
-        if pos + length == len(sentence):
-            break
-    return length
-
-def longestString(s):
-    firstCharPos = 0
-    if len(s) == 0: return ''
-    if len(s) == 1: return s
-    pos = 0
-    maxLen = 1
-    while(pos < len(s) ):
-        tempCandidate = howManyConsecutiveLetters(s, pos)
-        if maxLen < tempCandidate:
-            maxLen = tempCandidate
-            firstCharPos = pos
-        pos = pos + tempCandidate
-    return( s[ firstCharPos : firstCharPos+maxLen ] )
-    
-print('Longest substring in alphabetical order is: ' + longestString(s))
-
-
-
-
-
 # =============================================================================
-# for k in range(len(s) - 1):
-#     tempMax = 1
-#     while()
+# import string
+# 
+# def index(letter):
+#     return string.ascii_lowercase.index( letter.lower())
+# 
+# def areConsecutiveLetters( letter1, letter2 ):
+#     dif = index(letter2) - index( letter1 )
+#     #return dif == 1
+#     return  dif >= 0
+# 
+# def howManyConsecutiveLetters( sentence, pos ):
+#     if pos >= len( sentence ): return 0
+#     length = 1
+#     if pos == len( sentence ) - 1 : return length
+#     while( areConsecutiveLetters ( sentence[pos + length - 1], sentence[pos + length] )):
+#         length += 1
+#         if pos + length == len(sentence):
+#             break
+#     return length
+# 
+# def longestString(s):
+#     firstCharPos = 0
+#     if len(s) == 0: return ''
+#     if len(s) == 1: return s
+#     pos = 0
+#     maxLen = 1
+#     while(pos < len(s) ):
+#         tempCandidate = howManyConsecutiveLetters(s, pos)
+#         if maxLen < tempCandidate:
+#             maxLen = tempCandidate
+#             firstCharPos = pos
+#         pos = pos + tempCandidate
+#     return( s[ firstCharPos : firstCharPos+maxLen ] )
+#     
+# print('Longest substring in alphabetical order is: ' + longestString(s))
 # =============================================================================
 
+def switchTwoNumbers(a, b):
+    a = a + b
+    b = a - b
+    a = a - b
+    return [a, b]
 
+print( switchTwoNumbers(2, 3))
 
-
-
-
-#Problem 04
-
-
-
-#Problem 05
 
 
