@@ -7,9 +7,7 @@ Created on Fri Jan 28 19:31:49 2022
 
 #s='azcbobobegghakl'
 
-# =============================================================================
-# res = 0
-# =============================================================================
+#res = 0
 
 
 #Problem 01
@@ -18,12 +16,18 @@ Created on Fri Jan 28 19:31:49 2022
 # =============================================================================
 
 # =============================================================================
-# for char in s:
-#     if char in 'aeiou':
-#         res += 1
-#         
-# print('Number of vowels:',res)
+#for char in s:
+#    if char in 'aeiou':
+#        res += 1
+       
+#print('Number of vowels:',res)
 # =============================================================================
+
+#solution02
+#import re
+#pattern = '[aeiou]'
+#numberOfVowels = len(re.findall(pattern, s))
+#print('Number of vowels:',numberOfVowels)
 
 
 #Problem 02
@@ -96,13 +100,15 @@ s='abcabcdlefghijzz'
 # print('Longest substring in alphabetical order is: ' + longestString(s))
 # =============================================================================
 
-def switchTwoNumbers(a, b):
-    a = a + b
-    b = a - b
-    a = a - b
-    return [a, b]
-
-print( switchTwoNumbers(2, 3))
+# =============================================================================
+# def switchTwoNumbers(a, b):
+#     a = a + b
+#     b = a - b
+#     a = a - b
+#     return [a, b]
+# 
+# print( switchTwoNumbers(2, 3))
+# =============================================================================
 
 
 
