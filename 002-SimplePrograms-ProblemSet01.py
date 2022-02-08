@@ -4,7 +4,7 @@ Created on Mon Feb  7 22:21:38 2022
 
 @author: Silviu
 """
-month = 12
+months = 12
 balance = 42
 annualInterestRate = 0.2
 monthlyPaymentRate = 0.04
