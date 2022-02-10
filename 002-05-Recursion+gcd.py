@@ -6,15 +6,18 @@ Created on Sat Feb  5 15:49:32 2022
 """
 
 # =============================================================================
-# def odd(x):
+def odd(x):
 #     '''
 #     x: int
 # 
 #     returns: True if x is odd, False otherwise
 #     '''
 #     return  False if x % 2 == 0 else True
+    return True and (x%2 == 1)
 # =============================================================================
 
+print( odd(1) )
+print( odd(2) )
 
 # =============================================================================
 # # Calculate the power base**exp

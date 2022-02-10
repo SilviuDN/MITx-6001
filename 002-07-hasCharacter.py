@@ -15,14 +15,21 @@ def isIn(char, aStr):
     # Your code here
     length = len(aStr)
     if length == 0: return False
-    if length == 1:
-        if char == aStr[0]: return True
-        else: return False
-    if length == 2:
-        if char == aStr[0]: return True
-        
-    if char < aStr[length // 2]: return isIn( char, aStr[: length // 2])
-    return isIn( char, aStr[length // 2 : ])
+    if length == 1: return char == aStr[0]
+    return isIn(char, aStr[: length // 2]) if char < aStr[length // 2] else isIn( char, aStr[length // 2 : ])
+
+# =============================================================================
+#     length = len(aStr)
+#     if length == 0: return False
+#     if length == 1:
+#         if char == aStr[0]: return True
+#         else: return False
+#     if length == 2:
+#         if char == aStr[0]: return True
+#         
+#     if char < aStr[length // 2]: return isIn( char, aStr[: length // 2])
+#     return isIn( char, aStr[length // 2 : ])
+# =============================================================================
 
 print(isIn('a', '') )
 print(isIn('e', 'e') )
