@@ -1,0 +1,29 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Feb 11 21:21:31 2022
+
+@author: Silviu
+"""
+
+#l1 is a list => mutable => the counter is increased and the loops skips 2
+l1 = [1,2,3,4]
+l2 = [1,2,5,6]
+
+def removeDUps(l1, l2):
+        for e in l1:
+            if e in l2:
+                l1.remove(e)
+                
+removeDUps(l1, l2)
+
+
+l3=[1,2,3,4]
+l4=[1,2,5,6]
+
+def remove_duplicates(l1, l2):
+    l1_copy = l1[:]
+    for e in l1_copy:
+        if e in l2:
+            l1.remove(e)
+            
+remove_duplicates(l3, l4)
