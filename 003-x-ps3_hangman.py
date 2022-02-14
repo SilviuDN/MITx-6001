@@ -92,7 +92,7 @@ def announceRemainingGuesses(x):
     print('You have ' + str(8 - x) + ' guesses left.')
     
 def announceRemainingLetters( rem ):
-    print( 'Available letters: ' + str (rem) )
+    print( 'Available letters: ' + str (rem), end="" )
 
 def hangman(secretWord):
     '''
@@ -117,6 +117,7 @@ def hangman(secretWord):
     
     mistakesMade = 0
     lettersGuessed = ''
+    secretWord='c'
     
     print('Welcome to the game Hangman!')
     print('I am thinking of a word that is ' + str( len(secretWord) ) + ' letters long.')
@@ -126,20 +127,24 @@ def hangman(secretWord):
         announceRemainingGuesses( mistakesMade )
         announceRemainingLetters( getAvailableLetters( lettersGuessed ))
         guessing = input( 'Please guess a letter: ' ).lower()
-        if guessing in secretWord and guessing not in lettersGuessed:
-            lettersGuessed += guessing
-            print( 'Good guess: ' + str( getGuessedWord(secretWord, lettersGuessed) ) )
-        elif(  guessing in secretWord  ):
+        if guessing in lettersGuessed  :
             print("Oops! You've already guessed that letter: " + str( getGuessedWord(secretWord, lettersGuessed) ) )
+            separator()
+        elif guessing in secretWord:
+            lettersGuessed += guessing
+            #print( 'Litera', guessing, 'este in', secretWord,'este', guessing in secretWord)
+            print( 'Good guess: ' + str( getGuessedWord(secretWord, lettersGuessed) ) )
+            separator()
         else:
+            lettersGuessed += guessing
+            mistakesMade += 1  
             print( 'Oops! That letter is not in my word: ' + str( getGuessedWord(secretWord, lettersGuessed) ) )
-            
+            separator()
         if isWordGuessed(secretWord, lettersGuessed):
             print('Congratulations, you won!')
             return
-        mistakesMade += 1    
+          
     
-    separator()
     print('Sorry, you ran out of guesses. The word was ' + str(secretWord) + '. ')
                 
         
