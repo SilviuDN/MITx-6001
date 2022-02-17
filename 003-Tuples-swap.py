@@ -12,3 +12,18 @@ word = 'two'
 
 print('numarul e ', num)
 print('Se citeste ', word)
+
+
+inputData = ( (1, 'a'), (2, 'b'), (3,'c'), (4,'d') )
+
+def separateData( aTuple ):
+    numbers = ()
+    letters = ()
+    for tup in aTuple:
+        numbers += ( tup[0],)
+        letters += ( tup[1],)
+    return (numbers, letters )
+
+res = separateData(inputData)
+
+print(res[0], res[1])
