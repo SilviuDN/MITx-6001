@@ -35,6 +35,15 @@ def how_many2(aDict):
 
 print(how_many2(animals))
 
+#Method 2
+def how_many3(aDict):
+    count = 0
+    for key in aDict.keys():
+        count += len(aDict[key])
+    return count
+
+print('3rdmethod:', how_many3(animals))
+
 
 def biggest(aDict):
     '''
