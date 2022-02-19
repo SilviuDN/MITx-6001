@@ -27,3 +27,9 @@ def remove_duplicates(l1, l2):
             l1.remove(e)
             
 remove_duplicates(l3, l4)
+
+l6 = [1,2,3]
+l7 = [4,5,6,7]
+l8 = l6 + l7
+
+print(l8)
