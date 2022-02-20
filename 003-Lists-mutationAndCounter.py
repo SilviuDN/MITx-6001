@@ -33,3 +33,14 @@ l7 = [4,5,6,7]
 l8 = l6 + l7
 
 print(l8)
+
+
+l9 = [1,2,3,4,5,6,7,8,9]
+
+def verifyListMutability(li):
+    for el in li:
+        print(li)
+        print(el)
+        li.remove(el)
+        
+verifyListMutability(l9)
