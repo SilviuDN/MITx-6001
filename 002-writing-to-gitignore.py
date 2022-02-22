@@ -5,9 +5,7 @@ Created on Thu Feb 10 21:26:49 2022
 @author: Silviu
 """
 
-import os
-
-nameHandler = open('test10', 'w')
+nameHandler = open('.gitignore', 'w')
 
 for i in range(3):
     name = input('Enter name: ')
@@ -16,13 +14,10 @@ for i in range(3):
     
 nameHandler.close()
 
-nameFile = open('test10', 'r')
+nameFile = open('.gitignore', 'r')
 
 for line in nameFile:
     print(line)
     
 nameFile.close()
-                   
-deleteFile = input( "Delete file? ( y/n )")  
-if deleteFile == 'y':
-    os.remove('./test10')
+                     
