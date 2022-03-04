@@ -82,14 +82,16 @@ def getWordScore(word, n):
     score += bonus
     return score
     
-print( getWordScore('weed', 7) )
-print( getWordScore('waybill', 7) )    
-print( getWordScore('qi', 7) )
-print( getWordScore('was', 7) )    
-print( getWordScore('outgnaw', 7) )
-print( getWordScore('triplet', 7) )    
-print( getWordScore('dogs', 4) )
-print( getWordScore('cats', 7) )    
+# =============================================================================
+# print( getWordScore('weed', 7) )
+# print( getWordScore('waybill', 7) )    
+# print( getWordScore('qi', 7) )
+# print( getWordScore('was', 7) )    
+# print( getWordScore('outgnaw', 7) )
+# print( getWordScore('triplet', 7) )    
+# print( getWordScore('dogs', 4) )
+# print( getWordScore('cats', 7) )    
+# =============================================================================
     
 
 
@@ -161,7 +163,17 @@ def updateHand(hand, word):
     hand: dictionary (string -> int)    
     returns: dictionary (string -> int)
     """
-    # TO DO ... <-- Remove this comment when you code this function
+    res = hand.copy()
+    for letter in word:
+        if res[letter]>0: res[letter] -= 1
+# =============================================================================
+#     displayHand(hand)
+#     displayHand(res)
+# =============================================================================
+    return res
+    
+updateHand({'a':1, 'q':1, 'l':2, 'm':1, 'u':1, 'i':1}, "quail")
+
 
 
 
