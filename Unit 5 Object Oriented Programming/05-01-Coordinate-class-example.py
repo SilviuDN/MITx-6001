@@ -18,10 +18,22 @@ class Coordinate(object):
         return "<" + str( self.x ) + "," + str( self.y ) + ">"
     def __sub__(self, other ):
         return Coordinate( self.x - other.x , self.y - other.y )
+    def __add__(self, other ):
+        return Coordinate( self.x + other.x , self.y + other.y )
+    def __eq__(self, other ):
+        return ( self.x ==  other.x ) and ( self.y == other.y )
     
 c = Coordinate( 3, 4 )
 origin = Coordinate( 0, 0 )
+d = Coordinate( 1, 1 )
 
 print('Distanta dintre cele doua puncte este: ', c.distance( origin ))
 print('Distanta dintre cele doua puncte este: ', Coordinate.distance( c, origin ))
 
+#print( c.__str__)
+print( c )
+#print( c.__sub__.__str__ )
+print( c - d )
+print( c + d )
+print( c == d )
+print( c == c )
