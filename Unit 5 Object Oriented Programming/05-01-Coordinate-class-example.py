@@ -10,10 +10,18 @@ class Coordinate(object):
     def __init__(self, x, y):
         self.x = x
         self.y = y
+        
+    def getX(self):
+        return self.x
+
+    def getY(self):
+        return self.y
+    
     def distance( self, other ):
         x_diff_sq = ( self.x - other.x ) ** 2
         y_diff_sq = ( self.y - other.y) ** 2
         return ( x_diff_sq + y_diff_sq )**0.5
+    
     def __str__(self):
         return "<" + str( self.x ) + "," + str( self.y ) + ">"
     def __sub__(self, other ):
@@ -22,6 +30,9 @@ class Coordinate(object):
         return Coordinate( self.x + other.x , self.y + other.y )
     def __eq__(self, other ):
         return ( self.x ==  other.x ) and ( self.y == other.y )
+    
+    def __repr__(self):
+        return 'Coordinate(' + str(self.getX()) + ',' + str(self.getY()) + ')'
     
 c = Coordinate( 3, 4 )
 origin = Coordinate( 0, 0 )
@@ -32,8 +43,10 @@ print('Distanta dintre cele doua puncte este: ', Coordinate.distance( c, origin 
 
 #print( c.__str__)
 print( c )
-#print( c.__sub__.__str__ )
 print( c - d )
 print( c + d )
 print( c == d )
 print( c == c )
+
+print( c.__repr__ ())
+print(eval( c.__repr__ ()) )
