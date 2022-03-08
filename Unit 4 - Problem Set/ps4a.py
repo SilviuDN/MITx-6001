@@ -180,7 +180,7 @@ updateHand({'a':1, 'q':1, 'l':2, 'm':1, 'u':1, 'i':1}, "quail")
 #
 # Problem #3: Test word validity
 #
-def isValidWord(word, hand, wordList):
+def isValidWord2(word, hand, wordList):
     """
     Returns True if word is in the wordList and is entirely
     composed of letters in the hand. Otherwise, returns False.
@@ -191,9 +191,24 @@ def isValidWord(word, hand, wordList):
     hand: dictionary (string -> int)
     wordList: list of lowercase strings
     """
-    # TO DO ... <-- Remove this comment when you code this function
+    return word in wordList and isValidWordHelper(word, hand)
+    
+    
 
+        
+def isValidWordHelper(word, hand):
+    if len(word)==0: return True
+    temp = hand.get( word[0], 0) > 0
+    return temp and isValidWordHelper( word[1:], updateHand(hand, str( word[0] ) ) )
 
+def isValidWord(word, hand, wordList):
+    if word not in wordList: return False
+    lettersFreqInWord = getFrequencyDict(word)
+    for key in lettersFreqInWord:
+        if lettersFreqInWord[key] > hand.get( key, 0):
+            return False
+    return True
+    
 #
 # Problem #4: Playing a hand
 #
