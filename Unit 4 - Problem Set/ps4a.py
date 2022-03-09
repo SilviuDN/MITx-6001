@@ -192,9 +192,6 @@ def isValidWord2(word, hand, wordList):
     wordList: list of lowercase strings
     """
     return word in wordList and isValidWordHelper(word, hand)
-    
-    
-
         
 def isValidWordHelper(word, hand):
     if len(word)==0: return True
@@ -220,7 +217,10 @@ def calculateHandlen(hand):
     hand: dictionary (string-> int)
     returns: integer
     """
-    # TO DO... <-- Remove this comment when you code this function
+    len=0
+    for letter in hand:
+        len += hand.get( letter )
+    return len
 
 
 
@@ -248,6 +248,20 @@ def playHand(hand, wordList, n):
     """
     # BEGIN PSEUDOCODE <-- Remove this comment when you code this function; do your coding within the pseudocode (leaving those comments in-place!)
     # Keep track of the total score
+    totalScore = 0
+    #hand = dealHand(n)    
+    while calculateHandlen(hand) > 0:
+        displayCurrentHand( hand )
+        word = input('Enter word, or a "." to indicate that you are finished: ', end='')
+        print(word)
+
+def displayCurrentHand(hand):
+    print('Current hand: ',end = ' ')
+    displayHand(hand)
+        
+
+wordList = loadWords()  
+playHand(dealHand(7), wordList, 7)   
     
     # As long as there are still letters left in the hand:
     
