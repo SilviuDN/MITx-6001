@@ -84,14 +84,21 @@ class Hand(object):
         """
         # Your code here
         #raise NotImplementedError()
-        #wordToDict = self.setDummyHand(self,word)
-        #print(wordToDict)
-# =============================================================================
-#         for letter in word:
-#             if self.hand.get(letter,0) > 0: self.hand[letter] -= 1
-#             else return False
-# =============================================================================
+        hasAllLetters = True
+        wordFreq = {}
+        for letter in word:
+            wordFreq[letter] = wordFreq.get(letter,0) + 1
         
+        for letter in word:
+            if self.hand.get(letter,0) < wordFreq[letter]:
+                hasAllLetters = False
+                break
+        
+        if hasAllLetters:
+            for letter in word:
+                self.hand[letter] -= wordFreq[letter]
+        return hasAllLetters
+            
 
     
 myHand = Hand(7)
@@ -104,3 +111,31 @@ print(myHand.calculateLen())
 
 myHand.update('za')
 print(myHand)
+
+myHand.update('zab')
+print(myHand)
+
+
+myHand = Hand(7)
+myHand.setDummyHand('aulqqik')
+myHand.update('quail')
+print(myHand)
+
+
+myHand = Hand(14)
+myHand.setDummyHand('cccllaapppttrr')
+myHand.update('claptrap')
+print(myHand)
+
+
+myHand = Hand(4)
+myHand.setDummyHand('odgz')
+myHand.update('dog')
+print(myHand)
+
+
+myHand = Hand(30)
+myHand.setDummyHand('qqqwwweeerrrtttyyyuuuiiioooppp')
+myHand.update('typewriter')
+print(myHand)
+
