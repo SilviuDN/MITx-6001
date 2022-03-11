@@ -1,3 +1,9 @@
+"""
+Created on Fri Mar 11 11:14:09 2022
+
+@author: Silviu
+"""
+
 import random 
 
 class Hand(object):
@@ -84,7 +90,9 @@ class Hand(object):
         """
         # Your code here
         #raise NotImplementedError()
+        
         hasAllLetters = True
+        
         wordFreq = {}
         for letter in word:
             wordFreq[letter] = wordFreq.get(letter,0) + 1
@@ -95,7 +103,7 @@ class Hand(object):
                 break
         
         if hasAllLetters:
-            for letter in word:
+            for letter in wordFreq:
                 self.hand[letter] -= wordFreq[letter]
         return hasAllLetters
             
@@ -104,38 +112,50 @@ class Hand(object):
 myHand = Hand(7)
 print(myHand)
 print(myHand.calculateLen())
+print('######################################################################')
 
 myHand.setDummyHand('aazzmsp')
 print(myHand)
 print(myHand.calculateLen())
+print('######################################################################')
 
 myHand.update('za')
 print(myHand)
+print('######################################################################')
 
 myHand.update('zab')
 print(myHand)
+print('######################################################################')
 
 
 myHand = Hand(7)
 myHand.setDummyHand('aulqqik')
+print(myHand.hand)
 myHand.update('quail')
 print(myHand)
+print('######################################################################')
 
 
 myHand = Hand(14)
 myHand.setDummyHand('cccllaapppttrr')
+print(myHand.hand)
 myHand.update('claptrap')
 print(myHand)
+print('######################################################################')
 
 
 myHand = Hand(4)
 myHand.setDummyHand('odgz')
+print(myHand.hand)
 myHand.update('dog')
 print(myHand)
+print('######################################################################')
 
 
 myHand = Hand(30)
 myHand.setDummyHand('qqqwwweeerrrtttyyyuuuiiioooppp')
+print(myHand.hand)
 myHand.update('typewriter')
 print(myHand)
+print('######################################################################')
 
