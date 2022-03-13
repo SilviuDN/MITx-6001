@@ -8,26 +8,10 @@ Created on Sun Mar 13 14:16:07 2022
 '''
 genPrimes is a generator that returns a sequence of prime numbers on succesives calls
 '''
-
-def genFib():
-    fib1 = 0
-    fib2 = 1
-    while True:
-        next = fib1 + fib2
-        yield next
-        fib1 = fib2
-        fib2 = next
-        
-
-fib = genFib()
-print(fib)
-
-print( fib.__next__() )
-
 def genPrimes():
     primesList = [2]
     while True:
-        yield primesList
+        yield primesList[-1]
         n = primesList[-1] + 1
         while True:
             isPrime = True
@@ -43,5 +27,23 @@ primes = genPrimes()
 
 print( primes.__next__() )
             
+    
         
     
+# OFFICIAL MIT SOLUTION
+def genPrimes2():
+    primes = []   # primes generated so far
+    last = 1      # last number tried
+    while True:
+        last += 1
+        for p in primes:
+            if last % p == 0:
+                break
+        else:
+            primes.append(last)
+            yield last
+            
+        
+primes2 = genPrimes2()
+
+print( primes2.__next__() )
