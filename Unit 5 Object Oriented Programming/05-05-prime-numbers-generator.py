@@ -7,6 +7,7 @@ Created on Sun Mar 13 14:16:07 2022
 
 '''
 genPrimes is a generator that returns a sequence of prime numbers on succesives calls
+actually for each call the __next__ method returns the next prime number
 '''
 def genPrimes():
     primesList = [2]
