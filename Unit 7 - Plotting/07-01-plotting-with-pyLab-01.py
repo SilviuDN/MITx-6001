@@ -15,6 +15,8 @@ for i in range(-30, 30):
     xValues.append(i)
     yCuadratic.append(i*i)
     yCubic.append(i*i*i)
-    
-plt.plot( xValues, yCuadratic )    
+  
+plt.figure('quadratic')  
+plt.plot( xValues, yCuadratic ) 
+plt.figure('cubic')   
 plt.plot( xValues, yCubic )
