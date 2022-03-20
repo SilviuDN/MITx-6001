@@ -17,6 +17,24 @@ for i in range(-30, 30):
     yCubic.append(i*i*i)
   
 plt.figure('quadratic')  
+plt.title('quadratic')
+plt.xlabel("abscisa")
+plt.ylabel("ordonata")
 plt.plot( xValues, yCuadratic ) 
+
+
 plt.figure('cubic')   
 plt.plot( xValues, yCubic )
+
+
+plt.figure('cubic')
+plt.xlabel("abscisa")
+plt.ylabel("ordonata")
+plt.title('cubic')
+
+
+plt.figure('quadratic')
+plt.clf()
+plt.title('quadratic')
+plt.plot( xValues, yCuadratic ) 
+
