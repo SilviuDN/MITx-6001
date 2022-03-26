@@ -44,10 +44,3 @@ class Bag(Container):
         except:
             return 0
         
-        
-d1 = Bag()
-d1.insert(4)
-d1.insert(4)
-d1.insert(4)
-print(d1.count(2))
-print(d1.count(4))
